@@ -129,9 +129,11 @@ export default function Navbar() {
 
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
-          <Link href="/donate" className="btn-primary text-sm px-4 py-2 hidden sm:inline-flex">
-            🙏 Daan Karen
-          </Link>
+          <div className="hidden sm:block">
+            <Link href="/donate" className="btn-primary text-sm px-4 py-2">
+              🙏 Daan Karen
+            </Link>
+          </div>
           <button
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               scrolled || !isHome ? 'text-seva-green-dark' : 'text-white'
@@ -152,48 +154,50 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden bg-white border-t border-[#E5E0D8] shadow-lg">
-          <div className="px-4 py-3 space-y-1">
-            {navLinks.map((link) =>
-              link.children ? (
-                <div key={link.label}>
-                  <div className="px-3 py-2 text-xs font-bold text-saffron uppercase tracking-widest">
-                    {link.label}
-                  </div>
-                  {link.children.map((c) => (
-                    <Link
-                      key={c.href}
-                      href={c.href}
-                      className="block px-6 py-2.5 text-gray-700 font-medium hover:text-seva-green hover:bg-seva-green-50 rounded-lg transition-colors"
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href!}
-                  className={`block px-3 py-2.5 rounded-lg font-medium transition-colors ${
-                    pathname === link.href
-                      ? 'bg-seva-green-50 text-seva-green font-semibold'
-                      : 'text-gray-700 hover:bg-seva-green-50 hover:text-seva-green'
-                  }`}
-                >
+      {/* Mobile menu — always rendered, animated via max-height */}
+      <div
+        className={`lg:hidden bg-white border-t border-[#E5E0D8] shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? 'max-h-[560px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-4 py-3 space-y-1">
+          {navLinks.map((link) =>
+            link.children ? (
+              <div key={link.label}>
+                <div className="px-3 py-2 text-xs font-bold text-saffron uppercase tracking-widest">
                   {link.label}
-                </Link>
-              )
-            )}
-            <div className="pt-3 border-t border-[#E5E0D8]">
-              <Link href="/donate" className="btn-primary w-full justify-center text-sm">
-                🙏 Abhi Daan Karen
+                </div>
+                {link.children.map((c) => (
+                  <Link
+                    key={c.href}
+                    href={c.href}
+                    className="block px-6 py-3 text-gray-700 font-medium hover:text-seva-green hover:bg-seva-green-50 rounded-lg transition-colors"
+                  >
+                    {c.label}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href!}
+                className={`block px-3 py-3 rounded-lg font-medium transition-colors ${
+                  pathname === link.href
+                    ? 'bg-seva-green-50 text-seva-green font-semibold'
+                    : 'text-gray-700 hover:bg-seva-green-50 hover:text-seva-green'
+                }`}
+              >
+                {link.label}
               </Link>
-            </div>
+            )
+          )}
+          <div className="pt-3 border-t border-[#E5E0D8] pb-1">
+            <Link href="/donate" className="btn-primary w-full justify-center text-sm">
+              🙏 Abhi Daan Karen
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

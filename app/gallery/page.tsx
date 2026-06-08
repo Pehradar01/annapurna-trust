@@ -28,7 +28,7 @@ export default function GalleryPage() {
     <div className="overflow-x-hidden">
       {/* HERO */}
       <section
-        className="relative pt-48 pb-24 text-white"
+        className="relative pt-28 sm:pt-36 lg:pt-48 pb-12 sm:pb-16 lg:pb-24 text-white"
         style={{ background: 'linear-gradient(135deg, #0F3D25 0%, #2D7A52 60%, #C9962A 100%)' }}
       >
         <div className="max-w-[1200px] mx-auto px-6">
@@ -43,8 +43,8 @@ export default function GalleryPage() {
       {/* GALLERY */}
       <section className="py-20 bg-off-white">
         <div className="max-w-[1200px] mx-auto px-6">
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          {/* Filter tabs — horizontal scroll on mobile */}
+          <div className="chips-scroll mb-10 pb-1">
             {categories.map((c) => (
               <button
                 key={c}

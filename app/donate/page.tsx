@@ -45,7 +45,7 @@ export default function DonatePage() {
     <div className="overflow-x-hidden">
       {/* PAGE HERO */}
       <section
-        className="relative pt-48 pb-24 text-white"
+        className="relative pt-28 sm:pt-36 lg:pt-48 pb-12 sm:pb-16 lg:pb-24 text-white"
         style={{ background: 'linear-gradient(135deg, #B85E18 0%, #E07B2A 60%, #1B5E3B 100%)' }}
       >
         <div className="max-w-[1200px] mx-auto px-6">

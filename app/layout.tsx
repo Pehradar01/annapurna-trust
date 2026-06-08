@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import MobileActionBar from '@/components/MobileActionBar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -44,9 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="hi" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col antialiased">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-14 lg:pb-0">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <MobileActionBar />
       </body>
     </html>
   );

@@ -127,7 +127,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-32 w-full">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 pt-28 pb-16 sm:pt-36 sm:pb-20 lg:py-32 w-full">
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
@@ -166,11 +166,11 @@ export default function HomePage() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <Link href="/donate" className="btn-primary text-base px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link href="/donate" className="btn-primary text-base px-8 py-4 justify-center">
                 🙏 Abhi Daan Karen
               </Link>
-              <Link href="/about" className="btn-outline-white text-base px-8 py-4">
+              <Link href="/about" className="btn-outline-white text-base px-8 py-4 justify-center">
                 Hamare Baare Mein Janein →
               </Link>
             </div>
@@ -638,7 +638,7 @@ export default function HomePage() {
       {/* ── VOLUNTEER CTA ── */}
       <section className="py-16 md:py-20 bg-off-white">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="bg-white rounded-2xl shadow-xl border border-[#E5E0D8] p-10 md:p-14">
+          <div className="bg-white rounded-2xl shadow-xl border border-[#E5E0D8] p-6 sm:p-10 md:p-14">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <p className="section-label">Volunteer Banen</p>
